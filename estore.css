@@ -1,0 +1,229 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f3f4f6; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+.header {
+    background-color: #fff; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Equivalent to Tailwind's shadow-md */
+    padding: 1rem; 
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header .header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 1.5rem; 
+    font-weight: 800; 
+    color: #8B5CF6; 
+    margin-bottom: 1rem; 
+}
+
+.header nav ul {
+    display: flex;
+    flex-direction: column; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.75rem; 
+    color: #4B5563; 
+    font-size: 1rem; 
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease-in-out;
+}
+
+.header nav ul li a:hover {
+    color: #9333ea; 
+}
+
+
+.main-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem; 
+    flex-grow: 1; 
+}
+
+.main-content h1 {
+    font-size: 1.875rem; 
+    font-weight: 700; 
+    color: #1F2937;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem; 
+}
+
+
+.product-card {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to Tailwind's shadow-lg */
+    overflow: hidden;
+    transform: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Equivalent to Tailwind's transition-transform duration-200 */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Equivalent to Tailwind's hover:scale-105 */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Equivalent to Tailwind's hover:shadow-xl */
+}
+
+.product-card img {
+    width: 100%; /* Equivalent to Tailwind's w-full */
+    height: 12rem; /* Equivalent to Tailwind's h-48 */
+    object-fit: cover;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+
+.product-card .card-content {
+    padding: 1rem; /* Equivalent to Tailwind's p-4 */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-card .card-content h3 {
+    font-size: 1.25rem; /* Equivalent to Tailwind's text-xl */
+    font-weight: 600; /* Equivalent to Tailwind's font-semibold */
+    color: #1F2937; /* Equivalent to Tailwind's text-gray-800 */
+    margin-bottom: 0.5rem; /* Equivalent to Tailwind's mb-2 */
+}
+
+.product-card .card-content p {
+    color: #4B5563; /* Equivalent to Tailwind's text-gray-600 */
+    font-size: 0.875rem; /* Equivalent to Tailwind's text-sm */
+    line-height: 1.625; /* Equivalent to Tailwind's leading-relaxed */
+    flex-grow: 1;
+    margin-bottom: 0.75rem; /* Equivalent to Tailwind's mb-3 */
+}
+
+.product-card .price-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Equivalent to Tailwind's mt-auto */
+}
+
+.product-card .price {
+    color: #8B5CF6; /* Equivalent to Tailwind's text-purple-700 */
+    font-weight: 700; /* Equivalent to Tailwind's font-bold */
+    font-size: 1.125rem; /* Equivalent to Tailwind's text-lg */
+}
+
+.product-card .add-to-cart-btn {
+    background-color: #9333ea; /* Equivalent to Tailwind's bg-purple-600 */
+    color: #fff; /* Equivalent to Tailwind's text-white */
+    padding: 0.5rem 1rem; /* Equivalent to Tailwind's px-4 py-2 */
+    border-radius: 0.5rem; /* Equivalent to Tailwind's rounded-lg */
+    transition: background-color 0.2s ease-in-out; /* Equivalent to Tailwind's transition-colors duration-200 */
+    font-size: 0.875rem; /* Equivalent to Tailwind's text-sm */
+    border: none;
+    cursor: pointer;
+}
+
+.product-card .add-to-cart-btn:hover {
+    background-color: #7e22ce; /* Equivalent to Tailwind's hover:bg-purple-700 */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1F2937; /* Equivalent to Tailwind's bg-gray-800 */
+    color: #fff; /* Equivalent to Tailwind's text-white */
+    padding: 1.5rem; /* Equivalent to Tailwind's p-6 */
+    margin-top: 2rem; /* Equivalent to Tailwind's mt-8 */
+}
+
+.footer .footer-content {
+    text-align: center;
+    font-size: 0.875rem; /* Equivalent to Tailwind's text-sm */
+}
+
+/* --- Media Queries --- */
+
+/* Tablet (600px and up) */
+@media (min-width: 600px) {
+    .header .header-content {
+        flex-direction: row; /* Tablet and larger: horizontal header content */
+    }
+
+    .header .logo {
+        font-size: 1.875rem; /* Tablet and larger: text-3xl */
+        margin-bottom: 0; /* Tablet and larger: mb-0 */
+    }
+
+    .header nav ul {
+        flex-direction: row; /* Tablet and larger: horizontal navigation */
+        gap: 1.5rem; /* Equivalent to Tailwind's sm:space-x-6 */
+        font-size: 1.125rem; /* Tablet and larger: text-lg */
+    }
+
+    .main-content h1 {
+        font-size: 2.25rem; /* Tablet and larger: text-4xl */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Tablet and larger: 2 columns */
+        gap: 2rem; /* Equivalent to Tailwind's sm:gap-8 */
+    }
+
+    .product-card .card-content h3 {
+        font-size: 1.5rem; /* Tablet and larger: text-2xl */
+    }
+
+    .product-card .card-content p {
+        font-size: 1rem; /* Tablet and larger: text-base */
+    }
+
+    .product-card .price {
+        font-size: 1.25rem; /* Tablet and larger: text-xl */
+    }
+
+    .product-card .add-to-cart-btn {
+        font-size: 1rem; /* Tablet and larger: text-base */
+    }
+
+    .footer .footer-content {
+        font-size: 1rem; /* Tablet and larger: text-base */
+    }
+}
+
+/* Desktop (900px and up) */
+@media (min-width: 900px) {
+    .container {
+        max-width: 1280px; /* Fixed width container centered on screen for desktop */
+    }
+
+    .main-content h1 {
+        font-size: 3rem; /* Desktop: text-5xl */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)); /* Desktop: 4 columns */
+    }
+}
